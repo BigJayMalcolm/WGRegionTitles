@@ -5,8 +5,11 @@ Utilising the great work done by der_mewin with WGRegionEvents, I have created a
 Commands
 
 /region flag [region_id] greeting-title [Title Content]
+
 /region flag [region_id] greeting-subtitle [Subtitle Content]
+
 /region flag [region_id] farewell-title [Title Content]
+
 /region flag [region_id] farewell-subtitle [Subtitle Content]
 
 Clearing a title or subtitle is done in the same fashion as other WorldGuard flags. Simply do the command above but don't add the content parameter.
