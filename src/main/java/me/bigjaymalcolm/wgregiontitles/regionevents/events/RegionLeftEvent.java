@@ -3,6 +3,7 @@ package me.bigjaymalcolm.wgregiontitles.regionevents.events;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import me.bigjaymalcolm.wgregiontitles.Main;
 import me.bigjaymalcolm.wgregiontitles.regionevents.MovementWay;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerEvent;
 
@@ -22,26 +23,34 @@ public class RegionLeftEvent extends RegionEvent
     {
         super(region, player, movement, parent);
 
-        String titleString, subtitleString;
+        String titleString = "", subtitleString = "";
 
-        if (region.getFlag(Main.FAREWELL_TITLE_FLAG) == null)
-        {
-            titleString = "";
-        }
-        else
+        // Check whether title has been set
+        if (region.getFlag(Main.FAREWELL_TITLE_FLAG) != null)
         {
             titleString = region.getFlag(Main.FAREWELL_TITLE_FLAG).toString();
         }
 
-        if (region.getFlag(Main.FAREWELL_SUBTITLE_FLAG) == null)
-        {
-            subtitleString = "";
-        }
-        else
+        // Check whether subtitle has been set
+        if (region.getFlag(Main.FAREWELL_SUBTITLE_FLAG) != null)
         {
             subtitleString = region.getFlag(Main.FAREWELL_SUBTITLE_FLAG).toString();
         }
 
-        player.sendTitle(titleString, subtitleString, 10, 50, 20);
+        // Only send title if there is something to display
+        if (titleString != "" || subtitleString != "")
+        {
+            player.sendTitle(titleString, subtitleString, 10, 50, 20);
+        }
+
+        // Check whether sound has been set
+        if (region.getFlag(Main.FAREWELL_SOUND_FLAG) != null)
+        {
+            try
+            {
+                player.playSound(player.getLocation(), Sound.valueOf(region.getFlag(Main.FAREWELL_SOUND_FLAG).toString()),  10, 1);
+            }
+            catch (Exception e) { }
+        }
     }
 }

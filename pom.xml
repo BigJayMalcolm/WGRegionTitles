@@ -6,7 +6,7 @@
 
     <groupId>me.bigjaymalcolm.wgregiontitles</groupId>
     <artifactId>WGRegionTitles</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <url>http://maven.apache.org</url>
 
@@ -39,24 +39,10 @@
         </repository>
     </repositories>
     <dependencies>
-        <!--Spigot API-->
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.12.2-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
         <!--Bukkit API-->
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.12.2-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <!--Spigot API and NMS-->
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
             <version>1.12.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>

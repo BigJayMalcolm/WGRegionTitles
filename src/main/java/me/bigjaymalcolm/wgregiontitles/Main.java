@@ -15,8 +15,11 @@ public class Main extends JavaPlugin
 
     public static final Flag GREETING_TITLE_FLAG = new StringFlag("greeting-title", "");
     public static final Flag GREETING_SUBTITLE_FLAG = new StringFlag("greeting-subtitle", "");
+    public static final Flag GREETING_SOUND_FLAG = new StringFlag("greeting-sound", "");
+
     public static final Flag FAREWELL_TITLE_FLAG = new StringFlag("farewell-title", "");
     public static final Flag FAREWELL_SUBTITLE_FLAG = new StringFlag("farewell-subtitle", "");
+    public static final Flag FAREWELL_SOUND_FLAG = new StringFlag("greeting-sound", "");
 
     @Override
     public void onLoad()
@@ -36,8 +39,11 @@ public class Main extends JavaPlugin
         {
             registry.register(GREETING_TITLE_FLAG);
             registry.register(GREETING_SUBTITLE_FLAG);
+            registry.register(GREETING_SOUND_FLAG);
+
             registry.register(FAREWELL_TITLE_FLAG);
             registry.register(FAREWELL_SUBTITLE_FLAG);
+            registry.register(FAREWELL_SOUND_FLAG);
         }
         catch (FlagConflictException e)
         {
