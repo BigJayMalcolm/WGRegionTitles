@@ -7,11 +7,19 @@ Utilising the great work done by der_mewin with WGRegionEvents, I have created a
 ```
 /region flag [region_id] greeting-title [Title Content]
 /region flag [region_id] greeting-subtitle [Subtitle Content]
+/region flag [region_id] greeting-title-fade-in [Duration (in game ticks)]
+/region flag [region_id] greeting-title-duration [Duration (in game ticks)]
+/region flag [region_id] greeting-title-fade-out [Duration (in game ticks)]
+
 /region flag [region_id] greeting-sound [Sound Name]
 /region flag [region_id] greeting-command [Command]
 
 /region flag [region_id] farewell-title [Title Content]
 /region flag [region_id] farewell-subtitle [Subtitle Content]
+/region flag [region_id] farewell-title-fade-in [Duration (in game ticks)]
+/region flag [region_id] farewell-title-duration [Duration (in game ticks)]
+/region flag [region_id] farewell-title-fade-out [Duration (in game ticks)]
+
 /region flag [region_id] farewell-sound [Sound Name]
 /region flag [region_id] farewell-command [Command]
 ```

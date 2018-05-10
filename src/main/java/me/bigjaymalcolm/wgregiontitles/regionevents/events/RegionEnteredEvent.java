@@ -40,7 +40,27 @@ public class RegionEnteredEvent extends RegionEvent
         // Only send title if there is something to display
         if (titleString != "" || subtitleString != "")
         {
-            player.sendTitle(titleString, subtitleString, 10, 50, 20);
+            int fadeIn = 10;
+            int duration = 20;
+            int fadeOut = 10;
+
+            // Get the fade and duration flags
+            if (region.getFlag(Main.GREETING_TITLE_FADE_IN_FLAG) != null)
+            {
+                fadeIn = Integer.parseInt(region.getFlag(Main.GREETING_TITLE_FADE_IN_FLAG).toString());
+            }
+
+            if (region.getFlag(Main.GREETING_TITLE_DURATION_FLAG) != null)
+            {
+                duration = Integer.parseInt(region.getFlag(Main.GREETING_TITLE_DURATION_FLAG).toString());
+            }
+
+            if (region.getFlag(Main.GREETING_TITLE_FADE_OUT_FLAG) != null)
+            {
+                fadeOut = Integer.parseInt(region.getFlag(Main.GREETING_TITLE_FADE_OUT_FLAG).toString());
+            }
+
+            player.sendTitle(titleString, subtitleString, fadeIn, duration, fadeOut);
         }
 
         // Stop the farewell sound if it is still playing
