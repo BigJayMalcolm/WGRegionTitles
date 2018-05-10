@@ -43,6 +43,13 @@ public class RegionLeftEvent extends RegionEvent
             player.sendTitle(titleString, subtitleString, 10, 50, 20);
         }
 
+        // Stop the greeting sound if it is still playing
+        try
+        {
+            player.stopSound(Sound.valueOf(region.getFlag(Main.GREETING_SOUND_FLAG).toString()));
+        }
+        catch (Exception e) { }
+
         // Check whether sound has been set
         if (region.getFlag(Main.FAREWELL_SOUND_FLAG) != null)
         {
@@ -51,6 +58,11 @@ public class RegionLeftEvent extends RegionEvent
                 player.playSound(player.getLocation(), Sound.valueOf(region.getFlag(Main.FAREWELL_SOUND_FLAG).toString()),  10, 1);
             }
             catch (Exception e) { }
+        }
+
+        if (region.getFlag(Main.FAREWELL_COMMAND_FLAG) != null)
+        {
+            player.performCommand(region.getFlag(Main.FAREWELL_COMMAND_FLAG).toString());
         }
     }
 }
